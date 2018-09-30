@@ -19,7 +19,7 @@ Clone this repository and launch the app:
 sbt run
 ```
 
-then test the info endpoint:
+then test the ```/info``` endpoint:
 
 ```
 curl localhost:9000/info
@@ -38,7 +38,7 @@ sbt docker:publishLocal
 ```
 
 once you list your docker images, you will see
-the gumaz-seed image (that it's just 128MB) and you
+the gumaz-seed image (that is just 128MB) and you
 are ready to run the container:
 
 ```
@@ -46,7 +46,7 @@ docker run --name MyPlayApp -p 9000:9000 gumaz-seed:0.1.0 -Dplay.http.secret.key
 ```
 
 The container is running (check ```docker ps```) 
-and you can test the info endpoint:
+and you can test the ```/info``` endpoint:
 
 ```
 curl localhost:9000/info
