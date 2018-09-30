@@ -1,0 +1,9 @@
+---
+  swagger: "2.0"
+  info: 
+    title: "seed API"
+    description: "seed API"
+  consumes:
+    - application/json
+  produces: 
+    - application/json
