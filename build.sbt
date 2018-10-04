@@ -13,17 +13,14 @@ lazy val commonSettings = Seq(
 
 lazy val dockerSettings = Seq(
   packageName in Docker := conf.getString("docker.package.name"),
-  dockerBaseImage := conf.getString("docker.baseImage"),
-  dockerLabels := Map(
-    "maintainer" -> conf.getString("docker.maintainer")
-  ),
   dockerCommands := Seq(
     Cmd("FROM", "openjdk:8-jre-alpine"),
+    Cmd("LABEL", s"""maintainer="${conf.getString("docker.maintainer")}""""),
     Cmd("RUN", "apk --no-cache add bash"),
     Cmd("WORKDIR", "/opt/docker"),
     Cmd("ADD", "--chown=daemon:daemon opt /opt"),
     Cmd("USER", "daemon"),
-    Cmd("ENTRYPOINT", """["/opt/docker/bin/seed"]"""),
+    Cmd("ENTRYPOINT", s"""["/opt/docker/bin/seed"]"""),
     Cmd("CMD", """[]""")
   )
 )
