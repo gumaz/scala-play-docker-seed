@@ -5,6 +5,17 @@
 
 # An example controller showing a sample home page
 GET     /                               controllers.HomeController.index
+
+###
+#  summary: print application informations
+#  tags:
+#    - App Endpoints
+#  responses:
+#    200:
+#      description: success
+#      schema:
+#        $ref: '#/definitions/com.iheart.api.Protocol.AppInfo'
+###
 GET     /info                           controllers.HomeController.info
 
 ### NoDocs ###

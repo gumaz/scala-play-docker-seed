@@ -1,8 +1,8 @@
 ---
   swagger: "2.0"
   info: 
-    title: "seed API"
-    description: "seed API"
+    title: "gumaz-seed"
+    description: "Seed project for Play/Scala applications with Docker"
   consumes:
     - application/json
   produces: 

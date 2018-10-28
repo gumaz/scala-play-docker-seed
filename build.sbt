@@ -8,7 +8,8 @@ lazy val commonSettings = Seq(
   organization := conf.getString("app.org"),
   version := conf.getString("app.version"),
   scalaVersion := "2.12.6",
-  autoAPIMappings := true
+  autoAPIMappings := true,
+  swaggerDomainNameSpaces := Seq("models")
 )
 
 lazy val dockerSettings = Seq(
@@ -46,9 +47,3 @@ lazy val root = (project in file("."))
       scalaTest % Test
     )
   )
-
-// Adds additional packages into Twirl
-//TwirlKeys.templateImports += "it.gumaz.controllers._"
-
-// Adds additional packages into conf/routes
-// play.sbt.routes.RoutesKeys.routesImport += "it.gumaz.binders._"
