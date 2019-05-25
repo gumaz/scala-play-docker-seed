@@ -7,7 +7,7 @@ lazy val commonSettings = Seq(
   name := conf.getString("app.name"),
   organization := conf.getString("app.org"),
   version := conf.getString("app.version"),
-  scalaVersion := "2.12.6",
+  scalaVersion := "2.12.8",
   autoAPIMappings := true,
   swaggerDomainNameSpaces := Seq("models")
 )
