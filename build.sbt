@@ -7,7 +7,7 @@ lazy val commonSettings = Seq(
   name := conf.getString("app.name"),
   organization := conf.getString("app.org"),
   version := conf.getString("app.version"),
-  scalaVersion := "2.12.6",
+  scalaVersion := "2.12.8",
   autoAPIMappings := true,
   swaggerDomainNameSpaces := Seq("models")
 )
@@ -21,7 +21,7 @@ lazy val dockerSettings = Seq(
     Cmd("WORKDIR", "/opt/docker"),
     Cmd("ADD", "--chown=daemon:daemon opt /opt"),
     Cmd("USER", "daemon"),
-    Cmd("ENTRYPOINT", s"""["/opt/docker/bin/seed"]"""),
+    Cmd("ENTRYPOINT", s"""["/opt/docker/bin/${conf.getString("app.name")}"]"""),
     Cmd("CMD", """[]""")
   )
 )
